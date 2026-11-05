@@ -1,7 +1,7 @@
 import { useRef, useState } from 'react'
 import './App.css'
 
-const API_URL = '/api/review'
+const API_URL = `${(import.meta.env.VITE_API_URL || '').replace(/\/$/, '')}/api/review`
 const MAX_FILE_SIZE = 10 * 1024 * 1024
 const ALLOWED_EXTENSIONS = ['pdf', 'docx', 'txt', 'md']
 
@@ -277,7 +277,7 @@ function App() {
         </div>
 
         <div className="sidebar-profile">
-          <div className="avatar">E</div>
+          <div className="avatar" aria-label="User account"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></svg></div>
           <div className="profile-copy">
             <strong>My workspace</strong>
             <span>Personal account</span>
@@ -298,7 +298,7 @@ function App() {
             <span className="system-status">
               <i /> API workspace
             </span>
-            <div className="avatar avatar-small">E</div>
+            <div className="avatar avatar-small" aria-label="User account"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></svg></div>
           </div>
         </header>
 
